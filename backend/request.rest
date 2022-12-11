@@ -6,17 +6,11 @@ GET http://localhost:8000/api/forms
 
 ###
 
-GET http://localhost:8000/api/user-detail?username=shivam2
-
-###
-
-// chronejob
-
 POST http://localhost:8000/api/signup
 Content-Type: application/json
 
 {
-    "username": "shivam3",
+    "username": "shivam6",
     "password": "123"
 }
 
@@ -44,3 +38,8 @@ Content-Type: application/json
 ###
 
 PATCH http://localhost:8000/api/yoga-form?username=shivam2
+
+###
+
+GET http://localhost:8000/api/user-detail?username=shivam2
+

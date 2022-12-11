@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useUpdateUsername } from "../hook/useUsername";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const func = useUpdateUsername();
 
   const logIn = async () => {
     try {
@@ -24,6 +26,7 @@ const LoginPage = () => {
       );
 
       localStorage.setItem("username", data);
+      func();
       navigate("/yoga-form");
     } catch (err) {
       setError(err.response.data);

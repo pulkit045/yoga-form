@@ -1,3 +1,4 @@
+import cron from "node-cron";
 import express from "express";
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
@@ -22,6 +23,12 @@ app.get("/api/users", (req, res) => {
 app.get("/api/forms", (req, res) => {
   Form.find((err, forms) => {
     res.send(forms);
+  });
+});
+
+cron.schedule("* * 1 * *", () => {
+  Form.remove({}, () => {
+    console.log("refreshed all forms.");
   });
 });
 
