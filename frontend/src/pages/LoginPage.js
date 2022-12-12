@@ -31,8 +31,6 @@ const LoginPage = () => {
     } catch (err) {
       setError(err.response.data);
     }
-    setUsername("");
-    setPassword("");
   };
 
   return (
@@ -51,7 +49,7 @@ const LoginPage = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={logIn}>Log In</button>
-      <Link to="/create-account">Don't have an account? Create one here.</Link>
+      <Link to="/create-account" className="account-text">Don't have an account? Create one here.</Link>
     </>
   );
 };

@@ -7,7 +7,7 @@ const useUsername = () => useContext(UsernameContext);
 const useUpdateUsername = () => useContext(UsernameUpdateContext);
 
 const UsernameProvider = ({children})=>{
-  const [username, setUsername] = useState(localStorage.getItem("user name"));
+  const [username, setUsername] = useState(localStorage.getItem("username"));
 
   const getUsername = ()=>{
     const foundUsername = localStorage.getItem("username");
